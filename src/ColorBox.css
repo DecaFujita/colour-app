@@ -81,12 +81,19 @@
     top: 0;
     bottom: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 4rem;
     transform:  scale(0.1);
     opacity: 0;
     color: white;
+}
+
+.copy-msg p {
+
+    font-size: 2rem;
+
 }
 
 .copy-msg.show {
