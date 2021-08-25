@@ -21,6 +21,7 @@ class App extends React.Component {
           path='/palette/:paletteId/:colorId'
           render={routeProps => 
             <SingleColorPalette 
+              colorId={routeProps.match.params.colorId}
               palette={generatePalette(
                 this.findPalette(routeProps.match.params.paletteId) 
             )}/>}
