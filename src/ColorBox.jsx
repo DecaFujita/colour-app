@@ -20,7 +20,7 @@ class ColorBox extends React.Component {
     render() {
         const { name, background, moreUrl, showLink} = this.props;
         const { copied } = this.state;
-        const isDarkColor = chroma(background).luminance() <= 0.2;
+        const isDarkColor = chroma(background).luminance() <= 0.4;
         const isLightColor = chroma(background).luminance() >= 0.6;
         return(
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
@@ -45,7 +45,7 @@ class ColorBox extends React.Component {
                         </Link>
                     )}
                     
-                </div>s
+                </div>
             </CopyToClipboard>
         )
     }
