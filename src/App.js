@@ -14,18 +14,20 @@ class App extends React.Component {
   state = {
     palettes: seedColors
   }
-  findPalette = id => this.state.palettes.find(palette => palette.id === id)
-
-  savePalette = (newPalette) =>{
+  savePalette = newPalette => {
     this.setState({palettes: [...this.state.palettes, newPalette]})
   }
+  findPalette = id => this.state.palettes.find(palette => palette.id === id)
 
   render() {
     return (
       <Switch>
         <Route
           exact path='/palette/new'
-          render={(routeProps) => <NewPaletteForm savePalette={this.savePalette}{...routeProps}/>}
+          render={(routeProps) => <NewPaletteForm 
+          savePalette={this.savePalette}
+          palettes={this.state.palettes}
+          {...routeProps}/>}
         />
         <Route 
           exact
