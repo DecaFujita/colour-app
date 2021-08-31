@@ -11,11 +11,11 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Button from '@material-ui/core/Button';
-import DraggableColorBox from './DraggableColorBox';
+import Button from '@material-ui/core/Button'
 import DraggableColorList from './DraggableColorList';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import { ChromePicker } from 'react-color';
+import { arrayMove } from 'react-sortable-hoc';
 
 const drawerWidth = 400;
 
@@ -148,7 +148,11 @@ class NewPaletteForm extends React.Component {
     })
   }
 
- 
+  onSortEnd = ({oldIndex, newIndex}) => {
+    this.setState(({colors}) => ({
+      colors: arrayMove(colors, oldIndex, newIndex),
+    }));
+  };
 
   render() {
     const { classes, theme } = this.props;
@@ -258,6 +262,9 @@ class NewPaletteForm extends React.Component {
           <DraggableColorList 
             colors={this.state.colors}
             removeColor={this.removeColor}
+            axis='xy'
+            onSortEnd={this.onSortEnd}
+            pressDelay={100} //for the trash button to work properly
           />
 
 
