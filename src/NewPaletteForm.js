@@ -115,7 +115,7 @@ componentDidMount() {
             color: this.state.currentColor,
             name: this.state.newName
         }
-        this.setState({ colors: [...this.state.colors, newColor]});
+        this.setState({ colors: [...this.state.colors, newColor], newName: []}); 
     }
     
     handleChange = evt => {
@@ -148,6 +148,8 @@ componentDidMount() {
                 <Typography variant="h6" color="inherit" noWrap>
                   Persistent drawer
                 </Typography>
+                <Button 
+                variant='contained'color='secondary'> Save Palette</Button>
               </Toolbar>
             </AppBar>
             <Drawer
