@@ -3,33 +3,8 @@ import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/ColorPickerFormStyles';
 
-const styles = {
-    root: {
-        width: '90%',
-        // display: 'flex',
-        // flexDirection: 'column',
-        // alignItems: 'center',
-        // backgroundColor: 'red'
-    },
-    picker: {
-        width: '100% !important',
-        marginTop: '1rem'
-    },
-    addColor: {
-        width: '100%',
-        padding: '1rem',
-        marginTop: '1rem',
-        fontSize: '2rem'
-    },
-    colorNameInput: {
-        width: '100%',
-        height: '70px'
-
-    }
-
-
-}
 class ColorPickerForm extends React.Component {
     state = {
         currentColor: 'teal',
