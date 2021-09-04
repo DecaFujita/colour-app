@@ -46,10 +46,12 @@ class PaletteFormNav extends React.Component{
                 >
                     <Toolbar disableGutters={!open}>
                         <IconButton
-                        color="inherit"
-                        aria-label="Open drawer"
-                        onClick={this.props.handleDrawerOpen}
-                        className={classNames(classes.menuButton, open && classes.hide)}
+                            color="inherit"
+                            aria-label="Open drawer"
+                            onClick={this.props.handleDrawerOpen}
+                            className={classNames(classes.menuButton, {
+                                [classes.hide]: open
+                            })}
                         >
                         <MenuIcon />
                         </IconButton>

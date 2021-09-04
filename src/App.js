@@ -11,13 +11,28 @@ import './App.css';
  
 
 class App extends React.Component {
-  state = {
-    palettes: seedColors
-  }
-  savePalette = newPalette => {
-    this.setState({palettes: [...this.state.palettes, newPalette]})
+  constructor(props){
+    super();
+    const savedPalettes = JSON.parse(window.localStorage.getItem('palettes'));
+    this.state = {
+      palettes: savedPalettes || seedColors
+    }
   }
   findPalette = id => this.state.palettes.find(palette => palette.id === id)
+
+  savePalette = newPalette => {
+    this.setState({palettes: [...this.state.palettes, newPalette]},
+    this.syncLocalStorage
+    );
+  }
+  
+  syncLocalStorage() {
+    //save palettes to local storage
+    window.localStorage.setItem(
+      'palettes',
+       JSON.stringify(this.state.palettes)
+    )
+  }
 
   render() {
     return (

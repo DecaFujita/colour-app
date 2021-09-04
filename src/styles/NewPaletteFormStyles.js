@@ -10,7 +10,7 @@ const styles = theme => ({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    flexShrink: 0, 
   },
   drawerPaper: {
     width: drawerWidth,
@@ -19,6 +19,7 @@ const styles = theme => ({
   },
   drawerHeader: {
     display: 'flex',
+    width: '100%',
     alignItems: 'center',
     padding: '0 8px',
     ...theme.mixins.toolbar,
