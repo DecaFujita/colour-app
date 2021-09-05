@@ -1,5 +1,3 @@
-import { withTheme } from "@material-ui/styles";
-
 export default {
     root: {
         backgroundColor: 'blue',
@@ -31,7 +29,5 @@ export default {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 30%)',
         gridGap: '5%'
-
-
     }
 }

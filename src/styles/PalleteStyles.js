@@ -1,4 +1,6 @@
-export default {
+import sizes from './sizes';
+
+const styles = {
     Palette: {
         height: '100vh',
         display: 'flex',
@@ -9,7 +11,7 @@ export default {
     },
     goBack: {
         width: '20%',
-        height: '50% ',
+        height: '50%',
         margin: '0 auto',
         display: 'inline-block',
         position: 'relative',
@@ -36,6 +38,22 @@ export default {
             textTransform: 'uppercase',
             border: 'none',
             textDecoration: 'none',
-        }
+        },
+        [sizes.down('lg')]: {
+            width: '25%',
+            height: '33.3333%'
+          },
+          [sizes.down('md')]: {
+            width: '50%',
+            height: '20%'
+          },
+          [sizes.down('xs')]: {
+            width: '100%',
+            height: '10%'
+          }
+
+        
     }
 }
+
+export default styles;

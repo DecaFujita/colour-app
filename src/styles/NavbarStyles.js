@@ -1,4 +1,6 @@
-export default {
+import sizes from './sizes';
+
+const styles = {
     Navbar: {
         display: 'flex',
         alignItems: 'center',
@@ -17,6 +19,9 @@ export default {
         '& a': {
             textDecoration: 'none',
             color: 'black',
+        },
+        [sizes.down('xs')]: {
+            display: 'none'
         }
     },  
     slider: {
@@ -25,6 +30,9 @@ export default {
         display: 'inline-block',
         '& .rc-slide-rail': {
             height: '8px'
+        },
+        [sizes.down('md')]: {
+            width: '150px'
         },
         '& .rc-slider-handle,.rc-slider-handle:active, .rc-slider-handle:focus,.rc-slider-handle:hover': {
             backgroundColor: 'green',
@@ -45,3 +53,5 @@ export default {
         marginRight: '1rem'
     } 
 }
+
+export default styles;
