@@ -12,8 +12,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
-import  CheckIcon from '@material-ui/icons/Check';
-import  CloseIcon from '@material-ui/icons/Close';
+import CheckIcon from '@material-ui/icons/Check';
+import CloseIcon from '@material-ui/icons/Close';
 
 
 class PaletteList extends React.Component {
@@ -40,8 +40,8 @@ class PaletteList extends React.Component {
     }
 
     render() {
-        const { palettes, classes, deletePalette } = this.props;
-        const { openDeleteDialog, deletingId } = this.state;
+        const { palettes, classes } = this.props;
+        const { openDeleteDialog } = this.state;
 
         return (
             <div className={classes.root}>
@@ -55,8 +55,7 @@ class PaletteList extends React.Component {
                             <CSSTransition key={palette.id} classNames='fade' timeout={500}>
                                 <MiniPalette
                                 {...palette}
-                                handleClick={() => this.goToPalette(palette.id)}
-                                // handleDelete={deletePalette}
+                                handleClick={this.goToPalette}
                                 openDialog={this.openDialog}
                                 key={palette.id}
                                 id={palette.id}

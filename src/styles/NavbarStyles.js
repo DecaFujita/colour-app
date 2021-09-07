@@ -31,7 +31,7 @@ const styles = {
         '& .rc-slide-rail': {
             height: '8px'
         },
-        [sizes.down('md')]: {
+        [sizes.down('sm')]: {
             width: '150px'
         },
         '& .rc-slider-handle,.rc-slider-handle:active, .rc-slider-handle:focus,.rc-slider-handle:hover': {
